@@ -48,7 +48,7 @@ REPORTS_DIR.mkdir(exist_ok=True)
 # TELEGRAM CONFIG
 # ============================================================
 def parse_telegram_from_env():
-    env_vars = dotenv_values(BASE_DIR / ".env")
+    env_vars = st.secrets
     bots = {}
     for key, value in env_vars.items():
         if key.startswith("TELEGRAM_BOT_") and value and len(value) > 10:
